@@ -21,6 +21,19 @@ const sidebarClosedStyle = {
 const sidebarOpenStyle = {
     right: 'calc(100% - 250px)'
 };
+const sidebarButtonStyle = {
+    width: '30px',
+    height: '100%',
+    cursor: 'pointer',
+    flex: '0 0 auto',
+    alignSelf: 'center',
+    textAlign: 'center',
+    fontSize: '30px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    borderLeft: '1px solid #eee'
+};
 const mainContentBaseStyle = {
     position: 'absolute',
     height: '100%',
@@ -49,11 +62,11 @@ class Slidebar extends React.Component {
                 <div style={{flex: '1 0 auto'}}>
                     {this.props.sidebarContent}
                 </div>
-                <div style={{width: '30px', flex: '0 0 auto', alignSelf: 'center', textAlign: 'center'}} onClick={this.toggleSidebar}>
+                <div style={sidebarButtonStyle} onClick={this.toggleSidebar}>
                     {
                         this.state.open ?
-                            '<' :
-                            '>'
+                            '\u2039' :
+                            '\u203A'
                     }
                 </div>
             </div>
